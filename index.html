@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="Css/Style.css"> <!-- Enlaza el archivo CSS externo -->
+    <link rel="stylesheet" href="Css/Style.css"> 
     <title>Bienvenido</title>
 </head>
 <body>
@@ -16,20 +16,27 @@
     </header>
 
     <div>
-        <p>Por favor, inicia sesión para continuar.</p>
+        <p> inicia sesión para continuar.</p>
 
-        <form action="/login" method="post">
-            <label for="username">Usuario:</label>
-            <input type="text" id="username" name="username" required>
-            
-            <label for="password">Contraseña:</label>
-            <input type="password" id="password" name="password" required>
-
-            <button type="submit">Iniciar Sesión</button>
-        </form>
-
-        <p>¿No tienes una cuenta? <a href="/register">Regístrate</a></p>
-    </div>
-
-</body>
-</html>
+        <div id="login-container">
+            <h2>Iniciar Sesión</h2>
+    
+            <p id="error-message" style="color: red;"></p>
+    
+          
+            <form id="login-form" onsubmit="return validateForm()">
+                <label for="username">Usuario:</label>
+                <input type="text" id="username" name="username" required>
+                
+                <label for="password">Contraseña:</label>
+                <input type="password" id="password" name="password" required>
+    
+                <button type="submit">Iniciar Sesión</button>
+            </form>
+    
+            <p>¿No tienes una cuenta? <a href="/register">Regístrate</a></p>
+        </div>
+    
+        <script src="login.js"></script> 
+    </body>
+    </html>
