@@ -12,36 +12,42 @@
     <div id="dashboard-container">
         <h2>Tablero</h2>
 
-        <!-- Información del usuario -->
+       
         <div id="user-info">
             <p id="welcome-message"></p>
             <p id="total-spent"></p>
         </div>
 
-        <!-- Botón para agregar nuevo movimiento -->
+       
         <button id="add-movement-btn" onclick="openModal()">+</button>
 
-        <!-- Lista de Movimientos Financieros -->
+        
         <ul id="movements-list"></ul>
 
-        <!-- Panel Modal para agregar nuevo movimiento -->
+       
         <div id="modal" class="modal">
             <div class="modal-content">
                 <span class="close" onclick="closeModal()">&times;</span>
                 <h3>Agregar Nuevo Movimiento</h3>
-                <!-- Formulario para agregar nuevo movimiento -->
+               
                 <form id="add-movement-form" onsubmit="addMovement(); return false;">
                     <label for="description">Descripción:</label>
                     <input type="text" id="description" required>
+                    
+                    <label for="movement-type">Tipo de Movimiento:</label>
+                    <select id="movement-type" required>
+                        <option value="1">Ingreso</option>
+                        <option value="2">Egreso</option>
+                    </select>
+                    
                     <label for="amount">Monto:</label>
                     <input type="number" id="amount" required>
+        
+                   
                     <button type="submit">Agregar</button>
                 </form>
             </div>
         </div>
-
-    </div>
-
     <script src="dashboard.js"></script> 
 </body>
 </html>

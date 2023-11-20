@@ -26,6 +26,31 @@ function displayMovements(movements) {
         listItem.innerHTML = `<span class="movement-date">${movement.date}</span><span class="movement-description">${movement.description}</span><span class="movement-amount">$${movement.amount.toFixed(2)}</span>`;
         movementsList.appendChild(listItem);
     });
+
+    function addMovement() {
+        var description = document.getElementById("description").value;
+        var movementType = document.getElementById("movement-type").value;
+        var amount = document.getElementById("amount").value;
+    
+        
+        var newMovement = {
+            date: getCurrentDate(), 
+            description: description,
+            type: parseInt(movementType), 
+            amount: parseFloat(amount), 
+        };
+    
+        closeModal();
+        loadFinancialMovements();
+    }
+    
+    function getCurrentDate() {
+        var now = new Date();
+        var year = now.getFullYear();
+        var month = (now.getMonth() + 1).toString().padStart(2, '0');
+        var day = now.getDate().toString().padStart(2, '0');
+        return `${year}-${month}-${day}`;
+    }
 }
 
 
