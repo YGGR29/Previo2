@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tablero</title>
+    <link rel="stylesheet" href="Css/Style.css">
+</head>
+
+<body>
+
+    <div id="dashboard-container">
+        <h2>Tablero</h2>
+
+
+        <div id="user-info">
+            <p id="welcome-message"></p>
+            <p id="total-spent"></p>
+        </div>
+
+
+        <button id="add-movement-btn" onclick="openModal()">+</button>
+
+
+
+        <ul id="movements-list" onclick="showMovementDetails(event)"></ul>
+
+
+
+
+
+        <div id="modal" class="modal">
+            <div class="modal-content">
+                <span class="close" onclick="closeModal()">&times;</span>
+                <h3>Agregar Nuevo Movimiento</h3>
+
+                <form id="add-movement-form" onsubmit="addMovement(); return false;">
+                    <label for="description">Descripción:</label>
+                    <input type="text" id="description" required>
+
+                    <label for="movement-type">Tipo de Movimiento:</label>
+                    <select id="movement-type" required>
+                        <option value="1">Ingreso</option>
+                        <option value="2">Egreso</option>
+                    </select>
+
+                    <label for="amount">Monto:</label>
+                    <input type="number" id="amount" required>
+
+
+                    <button type="submit">Agregar</button>
+                </form>
+            </div>
+        </div>
+        <script src="dashboard.js"></script>
+</body>
+
+</html>

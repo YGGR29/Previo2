@@ -18,39 +18,66 @@ function loadUserInfo() {
 function displayMovements(movements) {
     var movementsList = document.getElementById("movements-list");
 
-
     movementsList.innerHTML = "";
 
+    
     movements.forEach(function (movement) {
         var listItem = document.createElement("li");
         listItem.innerHTML = `<span class="movement-date">${movement.date}</span><span class="movement-description">${movement.description}</span><span class="movement-amount">$${movement.amount.toFixed(2)}</span>`;
+        
+        
+        listItem.setAttribute("data-movement-id", movement.id);
+
         movementsList.appendChild(listItem);
     });
+}
 
-    function addMovement() {
-        var description = document.getElementById("description").value;
-        var movementType = document.getElementById("movement-type").value;
-        var amount = document.getElementById("amount").value;
-    
-        
-        var newMovement = {
-            date: getCurrentDate(), 
-            description: description,
-            type: parseInt(movementType), 
-            amount: parseFloat(amount), 
+function showMovementDetails(event) {
+    var target = event.target;
+
+    if (target.tagName === "LI") {
+        var movementId = target.getAttribute("data-movement-id");
+
+       
+        var movementDetails = {
+            date: "2023-01-01",
+            description: "Ejemplo de Detalles",
+            amount: 50.00,
+            type: 2,
         };
+
     
-        closeModal();
-        loadFinancialMovements();
-    }
-    
-    function getCurrentDate() {
-        var now = new Date();
-        var year = now.getFullYear();
-        var month = (now.getMonth() + 1).toString().padStart(2, '0');
-        var day = now.getDate().toString().padStart(2, '0');
-        return `${year}-${month}-${day}`;
+        alert(`Detalles del Movimiento\nFecha: ${movementDetails.date}\nDescripción: ${movementDetails.description}\nMonto: $${movementDetails.amount.toFixed(2)}\nTipo: ${movementDetails.type === 1 ? 'Ingreso' : 'Egreso'}`);
     }
 }
 
+function showMovementDetails(event) {
+    var target = event.target;
+
+    
+    if (target.tagName === "LI") {
+        var movementId = target.getAttribute("data-movement-id");
+
+        
+        var movementDetails = {
+            date: "2023-01-01",
+            description: "Ejemplo de Detalles",
+            amount: 50.00,
+            type: 2,
+        };
+
+    
+        var detailsMessage = `Detalles del Movimiento\nFecha: ${movementDetails.date}\nDescripción: ${movementDetails.description}\nMonto: $${movementDetails.amount.toFixed(2)}\nTipo: ${movementDetails.type === 1 ? 'Ingreso' : 'Egreso'}`;
+        
+        
+        detailsMessage += "\n\n¿Deseas eliminar este movimiento?";
+        if (confirm(detailsMessage)) {
+          
+            alert("Movimiento eliminado");
+
+
+            loadFinancialMovements();
+        }
+    }
+}
 
