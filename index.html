@@ -4,15 +4,20 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="Css/Style.css"> <!-- Enlaza el archivo CSS externo -->
     <title>Bienvenido</title>
 </head>
 <body>
 
+    <header>
+        <div>
+            <img src="Imagenes/Logo-BBVA.webp" alt="Logo">
+        </div>
+    </header>
+
     <div>
-        <h2>Bienvenido a la Aplicación de Gestión Financiera</h2>
         <p>Por favor, inicia sesión para continuar.</p>
 
-        <!-- Formulario de Inicio de Sesión -->
         <form action="/login" method="post">
             <label for="username">Usuario:</label>
             <input type="text" id="username" name="username" required>

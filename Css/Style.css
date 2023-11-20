@@ -4,15 +4,19 @@ body {
     margin: 0;
 }
 
-.contenedor-con-imagen {
-    background-image: url("Imagenes/ ");
-    background-size: cover; /* Ajusta el tamaño de la imagen para cubrir completamente el contenedor */
-    width: 300px; /* Ancho del contenedor */
-    height: 200px; /* Altura del contenedor */
-    /* Otros estilos que desees agregar */
+header {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 4px solid #3498db; /* Aumenta el grosor de la línea azul */
+    padding: 20px;
 }
 
-.container {
+header img {
+    max-width: 150px;
+    max-height: 150px;
+}
+
+div {
     max-width: 400px;
     margin: 50px auto;
     background-color: #fff;
@@ -21,38 +25,21 @@ body {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-.logo {
-    display: block;
-    margin: 0 auto;
+div p {
     text-align: center;
 }
 
-.logo img {
-    max-width: 100px;
-    height: auto;
+form {
+    display: flex;
+    flex-direction: column;
 }
 
-.separator {
-    margin: 20px 0;
-    border-top: 2px solid #3498db;
-}
-
-h2 {
-    text-align: center;
-    color: #333;
-}
-
-.form-group {
-    margin-bottom: 20px;
-}
-
-label {
-    display: block;
+form label {
     margin-bottom: 8px;
     color: #333;
 }
 
-input {
+form input {
     width: 100%;
     padding: 10px;
     border: 1px solid #ccc;
@@ -61,8 +48,12 @@ input {
     margin-bottom: 10px;
 }
 
+form input#password {
+    margin-top: 10px;
+}
+
 button {
-    background-color: #4caf50;
+    background-color: #3498db;
     color: #fff;
     padding: 10px 15px;
     border: none;
@@ -71,5 +62,12 @@ button {
 }
 
 button:hover {
-    background-color: #45a049;
+    background-color: #2980b9;
+}
+
+div a {
+    text-align: center;
+    display: block;
+    margin-top: 10px;
+    color: #3498db;
 }
